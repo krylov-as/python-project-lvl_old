@@ -1,20 +1,28 @@
-"""Print 'Yes' if user right"""
+"""Сhecks the correctness of guessing the missing number three times."""
+
 import random
+
+
 def game():
-    for i in range(3):
+    """Checks the correctness of guessing the missing number three times."""
+
+    repeat = 0
+    while repeat < 3:
         step = random.randint(1, 5)
         start = random.randint(1, 20)
         number_element = random.randint(5, 10)
-        arifm_progr  = []
+        arifm_progr = []
         for index in range(number_element):
             arifm_progr.append(start + step * index)
-        miss_element = random.randint(0, number_element-1)
-        result = arifm_progr[miss_element]
-        print(*arifm_progr[0:miss_element], '..', end=' ')
-        print(*arifm_progr[miss_element+1:number_element])
+        number_miss_element = random.randint(0, number_element - 1)
+        miss_element = arifm_progr[number_miss_element]
+        print(*arifm_progr[0:number_miss_element], '..', end=' ')
+        print(*arifm_progr[number_miss_element + 1:number_element])
         user_answer = int(input())
-        if result == user_answer:
-            print("Correct!")
-        else: 
-            print("'{}' is wrong answer ;(. Correct answer was '{}'.".format(user_answer, result))
-            break
+        if miss_element == user_answer:
+            print('Correct!')
+            repeat += 1
+        else:
+            wrong_output = "'{}' is wrong answer ;(. Correct answer was '{}'."
+            print(wrong_output.format(user_answer, miss_element))
+            repeat = 3

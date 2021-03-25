@@ -1,20 +1,30 @@
-"""Print 'Yes' if user right"""
+"""Checks three times if the user has correctly identified a prime number."""
+
 import random
 
+
 def is_even(number):
+    """Return 'yes' if number is even, else return 'no'."""
     if number % 2 == 0:
         return 'yes'
     return 'no'
 
 
 def game():
-    for index in range(3):
-        number = random.randint(1, 20)
-        print("Question: {}".format(number))
+    """Check if the user has correctly identified a even number.
+        Repeat three times.
+    """
+    repeat = 0
+    while repeat < 3:
+        uper_bound_rundom = 50
+        number = random.randint(1, uper_bound_rundom)
+        print('Question: {}'.format(number))
         check_number_is_even = is_even(number)
         user_answer = input()
         if (check_number_is_even == user_answer):
-            print("Correct!")
-        else: 
-            print("'{}' is wrong answer ;(. Correct answer was '{}'.".format(user_answer, check_number_is_even))
-            break
+            print('Correct!')
+            repeat += 1
+        else:
+            wrong_answer = "'{}' is wrong answer ;(. Correct answer was '{}'."
+            print(wrong_answer.format(user_answer, check_number_is_even))
+            repeat = 3

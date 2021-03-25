@@ -1,22 +1,25 @@
-"""Print 'Yes' if user right"""
+"""Print 'Yes' if user right."""
 import random
 
 
 def game():
-    for index in range(3):
-        first_number = random.randint(1, 20)
-        second_number = random.randint(1, 20)
+    """Check result expression. Print Correct if result true."""
+    for _index in range(3):
+        upper_bound_rundom = 50
+        first_number = random.randint(1, upper_bound_rundom)
+        second_number = random.randint(1, upper_bound_rundom)
         operation = random.choice(['+', '-', '*'])
         if operation == '+':
-            result = first_number + second_number
+            result_expression = first_number + second_number
         elif operation == '-':
-            result = first_number - second_number
+            result_expression = first_number - second_number
         else:
-            result = first_number * second_number
+            result_expression = first_number * second_number
         print('{} {} {}'.format(first_number, operation, second_number))
         user_answer = int(input())
-        if result == user_answer:
-            print("Correct!")
-        else: 
-            print("'{}' is wrong answer ;(. Correct answer was '{}'.".format(user_answer, result))
+        if result_expression == user_answer:
+            print('Correct!')
+        else:
+            text_wrong = "'{}' is wrong answer ;(. Correct answer was '{}'"
+            print(text_wrong.format(user_answer, result_expression))
             break

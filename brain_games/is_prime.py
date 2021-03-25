@@ -1,23 +1,34 @@
-"""Check rundom number is prime. Print correct unswer if true"""
+"""Check rundom number is prime. Print correct unswer if true."""
+
 import random
 
-def is_prime(n):
-    if n % 2 == 0:
+
+def is_prime(number):
+    """Returns 'yes' if number is prime, else returns 'no'."""
+
+    if number % 2 == 0:
         return 'no'
-    d = 3
-    while d * d <= n and n % d != 0:
-        d += 2
-    return 'yes' if d * d > n else 'no'
+    devider = 3
+    while devider * devider <= number and number % devider != 0:
+        devider += 2
+    return 'yes' if devider * devider > number else 'no'
 
 
 def game():
-    for index in range(3):
+    """Check if the user has correctly identified a prime number.
+    Repeat three times.
+    """
+
+    repeat = 0
+    while repeat < 3:
         number = random.randint(1, 50)
-        print("Question: {}".format(number))
+        print('Question: {}'.format(number))
         check_number_is_prime = is_prime(number)
         user_answer = input()
         if (check_number_is_prime == user_answer):
-            print("Correct!")
-        else: 
-            print("'{}' is wrong answer ;(. Correct answer was '{}'.".format(user_answer, check_number_is_prime))
-            break
+            print('Correct!')
+            repeat += 1
+        else:
+            wrong_text = "'{}' is wrong answer ;(. Correct answer was '{}'."
+            print(wrong_text.format(user_answer, check_number_is_prime))
+            repeat = 3
