@@ -10,8 +10,12 @@ def main():
     print('Welcome to the Brain Games!')
     name = cli.welcome_user()
     print('What number is missing in the progression?')
-    arifm.game()
-    print("Let's try again, {}!".format(name))
+    check = arifm.game()
+    if check:
+        print('Congratulations, {}!'.format(name))
+    else:
+        print("Let's try again, {}!".format(name))
+
 
 
 if __name__ == '__main__':

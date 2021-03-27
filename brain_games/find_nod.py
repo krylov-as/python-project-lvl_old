@@ -23,13 +23,15 @@ def game():
     while repeat < 3:
         first_number = random.randint(1, 20)
         second_number = random.randint(1, 20)
-        print('{} {}'.format(first_number, second_number))
+        print('Question: {} {}'.format(first_number, second_number))
         user_answer = int(input())
         result_gcd = gcd(first_number, second_number)
         if result_gcd == user_answer:
             print('Correct!')
             repeat += 1
+            if repeat == 3: 
+                return True
         else:
             wrong_output = "'{}' is wrong answer ;(. Correct answer was '{}'."
             print(wrong_output.format(user_answer, result_gcd))
-            repeat = 3
+            return False

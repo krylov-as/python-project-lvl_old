@@ -10,8 +10,11 @@ def main():
     print('Welcome to the Brain Games!')
     name = cli.welcome_user()
     print('Answer "yes" if the number is prime. Otherwise answer "no".')
-    is_prime.game()
-    print("Let's try again, {}!".format(name))
+    check = is_prime.game()
+    if check:
+        print('Congratulations, {}!'.format(name))
+    else:
+        print("Let's try again, {}!".format(name))
 
 
 if __name__ == '__main__':

@@ -10,8 +10,11 @@ def main():
     print('Welcome to the Brain Games!')
     name = cli.welcome_user()
     print('Find the greatest common divisor of given numbers')
-    find_nod.game()
-    print("Let's try again, {}!".format(name))
+    check = find_nod.game()
+    if check:
+        print('Congratulations, {}!'.format(name))
+    else:
+        print("Let's try again, {}!".format(name))
 
 
 if __name__ == '__main__':

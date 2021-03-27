@@ -28,7 +28,9 @@ def game():
         if (check_number_is_prime == user_answer):
             print('Correct!')
             repeat += 1
+            if repeat == 3:
+                return True
         else:
             wrong_text = "'{}' is wrong answer ;(. Correct answer was '{}'."
             print(wrong_text.format(user_answer, check_number_is_prime))
-            repeat = 3
+            return False

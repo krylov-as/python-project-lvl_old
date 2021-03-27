@@ -10,8 +10,11 @@ def main():
     print('Welcome to the Brain Games!')
     name = cli.welcome_user()
     print('What is the result of the expression?')
-    calc.game()
-    print("Let's try again, {}!".format(name))
+    check = calc.game()
+    if check:
+        print('Congratulations, {}!'.format(name))
+    else:
+        print("Let's try again, {}!".format(name))
 
 
 if __name__ == '__main__':
