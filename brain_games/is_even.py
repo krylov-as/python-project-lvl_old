@@ -25,8 +25,8 @@ def game():
             print('Correct!')
             repeat += 1
             if repeat == 3:
-                print('Congratulations, Bill!')
+                return True
         else:
             wrong_answer = "'{}' is wrong answer ;(. Correct answer was '{}'."
             print(wrong_answer.format(user_answer, check_number_is_even))
-            repeat = 3
+            return False
