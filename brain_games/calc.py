@@ -16,7 +16,8 @@ def game():
             result_expression = first_number - second_number
         else:
             result_expression = first_number * second_number
-        print('Question: {} {} {}'.format(first_number, operation, second_number))
+        print('Question: {} {} {}'.
+              format(first_number, operation, second_number))
         user_answer = int(input())
         if result_expression == user_answer:
             print('Correct!')

@@ -29,7 +29,7 @@ def game():
         if result_gcd == user_answer:
             print('Correct!')
             repeat += 1
-            if repeat == 3: 
+            if repeat == 3:
                 return True
         else:
             wrong_output = "'{}' is wrong answer ;(. Correct answer was '{}'."
