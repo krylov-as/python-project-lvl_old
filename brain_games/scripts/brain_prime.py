@@ -1,12 +1,8 @@
 #!/usr/bin/env python3
 """Start game brain-prime."""
 
-import sys
-
-sys.path.append('/home/krylovas/python-project-lvl1/brain_games')
-
-import is_prime
-import cli
+import brain_games.cli as cli
+import brain_games.is_prime as is_prime
 
 
 def main():

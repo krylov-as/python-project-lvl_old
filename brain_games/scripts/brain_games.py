@@ -1,12 +1,7 @@
 #!/usr/bin/env python3
 """Start brain-games."""
 
-
-import sys
-
-sys.path.append('/home/krylovas/python-project-lvl1/brain_games')
-
-import cli
+import brain_games.cli as cli
 
 
 def welcome():

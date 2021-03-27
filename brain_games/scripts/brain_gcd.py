@@ -1,11 +1,8 @@
 #!/usr/bin/env python3
 """Start game brain-gcd."""
 
-import sys
-sys.path.append('/home/krylovas/python-project-lvl1/brain_games')
-import find_nod
-
-import cli
+import brain_games.cli as cli
+import brain_games.find_nod as find_nod
 
 
 def main():

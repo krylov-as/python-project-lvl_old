@@ -1,10 +1,8 @@
 #!/usr/bin/env python3
 """Start game brain-progression."""
 
-import sys
-sys.path.append('/home/krylovas/python-project-lvl1/brain_games')
-import arifm
-import cli
+import brain_games.arifm as arifm
+import brain_games.cli as cli
 
 
 def main():

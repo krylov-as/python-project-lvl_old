@@ -1,10 +1,10 @@
-"""Сhecks the correctness of guessing the missing number three times."""
+"""Сheck the correctness of guessing the missing number three times."""
 
 import random
 
 
 def game():
-    """Checks the correctness of guessing the missing number three times."""
+    """Check the correctness of guessing the missing number three times."""
 
     repeat = 0
     while repeat < 3:
@@ -16,7 +16,8 @@ def game():
             arifm_progr.append(start + step * index)
         number_miss_element = random.randint(0, number_element - 1)
         miss_element = arifm_progr[number_miss_element]
-        print(*arifm_progr[0:number_miss_element], '..', end=' ')
+        print(*arifm_progr[0:number_miss_element], end=' ')
+        print('..', end=' ')
         print(*arifm_progr[number_miss_element + 1:number_element])
         user_answer = int(input())
         if miss_element == user_answer:
