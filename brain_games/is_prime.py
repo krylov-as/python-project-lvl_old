@@ -7,7 +7,7 @@ def is_prime(number):
     """Returns 'yes' if number is prime, else returns 'no'."""
 
     if number % 2 == 0:
-        return 'Yes'
+        return 'no'
     devider = 3
     while devider * devider <= number and number % devider != 0:
         devider += 2
